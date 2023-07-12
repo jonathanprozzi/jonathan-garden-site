@@ -20,8 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, 'bg-slate-900 text-slate-100')}>
         <main className="flex-auto min-w-0 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
+          <header>
+            <Navbar />
+          </header>
+          <section className="text-base">{children}</section>
         </main>
       </body>
     </html>
