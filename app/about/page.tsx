@@ -1,7 +1,7 @@
 export default function About() {
   return (
-    <main className="flex  flex-col items-center justify-between py-24 px-8 md:p-24">
-      <div className="flex flex-col items-center justify-center gap-4">
+    <main className="flex flex-col">
+      <div className="flex flex-col  items-center justify-center gap-4">
         <h1 className="text-bold text-xl md:text-3xl  bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-indigo-500">
           About Me
         </h1>

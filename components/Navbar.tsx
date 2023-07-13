@@ -23,7 +23,7 @@ const Navbar = () => {
   }
 
   return (
-    <aside className="bg:transparent">
+    <aside className="bg:transparent mb-12">
       <div>
         <nav
           className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
@@ -37,9 +37,9 @@ const Navbar = () => {
                   key={path}
                   href={path}
                   className={clsx(
-                    'transition-all hover:text-slate-100 text-slate-300 flex align-middle',
+                    'transition-all text-slate-200 hover:text-teal-300 flex align-middle',
                     {
-                      'text-neutral-500': !isActive,
+                      'text-slate-200': !isActive,
                     }
                   )}
                 >
