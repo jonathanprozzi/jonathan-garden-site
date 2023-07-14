@@ -11,6 +11,9 @@ const navItems = {
   '/projects': {
     name: 'projects',
   },
+  '/writing': {
+    name: 'writing',
+  },
   '/about': {
     name: 'about',
   },
@@ -39,7 +42,7 @@ const Navbar = () => {
                   className={clsx(
                     'transition-all text-slate-200 hover:text-teal-300 flex align-middle',
                     {
-                      'text-slate-200': !isActive,
+                      'text-teal-400': isActive,
                     }
                   )}
                 >

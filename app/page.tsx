@@ -1,4 +1,4 @@
-import { Github, GithubIcon, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -9,20 +9,21 @@ export default function Home() {
         </h1>
         <div className="flex flex-col gap-2">
           <p>
-            I&apos;m a product engineer interested in learning,
+            I am a product engineer with a keen interest in learning,
             decentralization, and tools for thought. I enjoy working across the
             entire spectrum of product development, from UX design to
-            implementation. I&apos;ve been exploring decentralization and web3
-            and have been fortunate to work on several amazing projects.
+            implementation. Recently, I have been exploring decentralization and
+            web3 and have had the privilege of working on several amazing
+            projects.
           </p>
           <p>
-            I spent several years in the non-profit edtech space, building
-            products for educators and learners. During this time I discovered a
-            passion for building accessible apps that promote collaboration and
-            access to resources.
+            For several years, I worked in the non-profit edtech space, building
+            products for educators and learners. During this time, I discovered
+            a passion for creating accessible apps that promote collaboration
+            and provide access to resources.
           </p>
           <p>
-            I love working openly, and prefer to work in open source wherever
+            I value working openly and prefer to work in open source whenever
             possible.
           </p>
         </div>
