@@ -23,9 +23,24 @@ export default function Projects() {
               className="transition-all text-teal-400 hover:text-teal-300"
             >
               https://jonathanprozzi.net/
+            </a>
+            . Much of the content is from when I co-hosted an{' '}
+            <a
+              href="https://indieweb.org/"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="transition-all text-teal-400 hover:text-teal-300"
+            >
+              IndieWeb
             </a>{' '}
-            Much of the content is from when I co-hosted an IndieWeb Homebrew
-            Website Club.
+            <a
+              href="https://indieweb.org/Homebrew_Website_Club"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="transition-all text-teal-400 hover:text-teal-300"
+            >
+              Homebrew Website Club.
+            </a>
           </p>
         </div>
       </div>

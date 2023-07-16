@@ -14,9 +14,9 @@ const navItems = {
   '/writing': {
     name: 'writing',
   },
-  '/about': {
-    name: 'about',
-  },
+  // '/about': {
+  //   name: 'about',
+  // },
 };
 
 const Navbar = () => {
