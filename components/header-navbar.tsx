@@ -19,7 +19,7 @@ const navItems = {
   // },
 };
 
-const Navbar = () => {
+const HeaderNavbar = () => {
   let pathname = usePathname() || '/';
   if (pathname.includes('/blog/')) {
     pathname = '/blog';
@@ -62,4 +62,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default HeaderNavbar;
