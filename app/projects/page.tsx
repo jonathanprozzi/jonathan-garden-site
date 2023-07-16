@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import { allProjects, Project } from 'contentlayer/generated';
+
 export default function Projects() {
   return (
     <main className="flex flex-col">
@@ -17,6 +20,18 @@ export default function Projects() {
             projects. My goal is to include case studies for featured projects.
           </p>
         </div>
+        {allProjects.map((project, idx) => (
+          <div key={idx}>
+            <h2 className="mb-1 text-xl">
+              <Link
+                href={project.slug}
+                className="text-blue-700 hover:text-blue-900 dark:text-blue-400"
+              >
+                {project.title}
+              </Link>
+            </h2>
+          </div>
+        ))}
       </div>
     </main>
   );

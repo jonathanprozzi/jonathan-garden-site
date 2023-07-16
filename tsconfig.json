@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -15,15 +14,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      // "@/*": ["./*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
+    },
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      // "@/*": ["./*"]
-      "contentlayer/generated": ["./.contentlayer.generated"]
-    }
+    ]
   },
   "include": [
     "next-env.d.ts",
