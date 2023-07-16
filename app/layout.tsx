@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import HeaderNavbar from '@/components/header-navbar';
+import HeaderNavbar from '@/components/header-navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({
       >
         <main className="flex-auto min-w-0 flex flex-col px-2 md:px-0">
           <header>
-            <Navbar />
+            <HeaderNavbar />
           </header>
           <section className="text-base">{children}</section>
         </main>
