@@ -20,9 +20,10 @@ export default function Projects() {
               href="https://jonathanprozzi.net/"
               rel="noopener noreferrer"
               target="_blank"
+              className="transition-all text-teal-400 hover:text-teal-300"
             >
               https://jonathanprozzi.net/
-            </a>
+            </a>{' '}
             Much of the content is from when I co-hosted an IndieWeb Homebrew
             Website Club.
           </p>
