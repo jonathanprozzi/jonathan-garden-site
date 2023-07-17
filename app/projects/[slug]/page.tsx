@@ -4,9 +4,15 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 export const generateStaticParams = async () =>
   allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
 
+console.log(
+  'all projects',
+  allProjects.map((project) => ({ slug: project._raw.flattenedPath }))
+);
+
 export const generateMetadata = ({ params }: { params: { slug: string } }) => {
+  console.log('params', params);
   const project = allProjects.find(
-    (project) => project._raw.flattenedPath === params.slug
+    (project) => project._raw.flattenedPath === `projects/${params.slug}`
   );
   if (!project) throw new Error(`Project not found for slug ${params.slug}`);
   return { title: project.title };
@@ -14,7 +20,7 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
 
 const ProjectLayout = ({ params }: { params: { slug: string } }) => {
   const project = allProjects.find(
-    (project) => project._raw.flattenedPath === params.slug
+    (project) => project._raw.flattenedPath === `projects/${params.slug}`
   );
   if (!project) throw new Error(`Project not found for slug ${params.slug}`);
 

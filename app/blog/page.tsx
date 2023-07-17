@@ -1,7 +1,4 @@
-import Link from 'next/link';
-import { allPosts, Post } from 'contentlayer/generated';
-
-export default function Writing() {
+export default function Projects() {
   return (
     <main className="flex flex-col">
       <div className="flex flex-col  items-center justify-center gap-4">
@@ -46,18 +43,6 @@ export default function Writing() {
             </a>
           </p>
         </div>
-        {allPosts.map((post, idx) => (
-          <div key={idx}>
-            <h2 className="mb-1 text-xl">
-              <Link
-                href={post.slug}
-                className="text-blue-700 hover:text-blue-900 dark:text-blue-400"
-              >
-                {post.title}
-              </Link>
-            </h2>
-          </div>
-        ))}
       </div>
     </main>
   );

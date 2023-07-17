@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { allProjects, Project } from 'contentlayer/generated';
 
 export default function Projects() {
+  console.log('all projects', allProjects);
   return (
     <main className="flex flex-col">
       <div className="flex flex-col  items-center justify-center gap-4">
