@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { allPosts } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
@@ -16,6 +17,10 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
 const PostLayout = ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find((post) => post.slugAsParams === params.slug);
   if (!post) throw new Error(`Post not found for slug ${params.slug}`);
+
+  if (post.private === true) {
+    notFound();
+  }
 
   const MDXContent = useMDXComponent(post.body.code);
 
