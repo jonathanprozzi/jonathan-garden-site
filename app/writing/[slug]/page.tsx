@@ -20,7 +20,9 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   return (
     <section className="max-auto max-w-xl py-8">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold">{post.title}</h1>
+        <h1 className="mt-2 scroll-m-20 text-4xl font-bold tracking-tight">
+          {post.title}
+        </h1>
       </div>
       <Mdx code={post.body.code} />
     </section>
