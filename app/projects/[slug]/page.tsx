@@ -28,7 +28,7 @@ const ProjectLayout = ({ params }: { params: { slug: string } }) => {
 
   return (
     <section className="max-auto max-w-xl py-8">
-      <div className="mb-8 text-center">
+      <div className="mb-8 ">
         <h1 className="text-2xl font-bold">{project.title}</h1>
       </div>
       <MDXContent />
