@@ -31,7 +31,7 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
-      resolve: (post) => `${post._raw.flattenedPath}`,
+      resolve: (post) => `${post._raw.flattenedPath}/`,
     },
   },
 }));
