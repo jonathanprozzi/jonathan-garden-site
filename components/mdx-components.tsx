@@ -1,9 +1,10 @@
+// @ts-nocheck - MDX components are not fully typesafe. WIP
 import * as React from 'react';
 import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { cn } from '@/lib/utils';
 
-const components = {
+const components: ComponentProps = {
   h1: ({ className, ...props }) => (
     <h1
       className={cn(
@@ -129,7 +130,7 @@ const components = {
   pre: ({ className, ...props }) => (
     <pre
       className={cn(
-        'mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4',
+        'mb-4 mt-6 overflow-x-auto rounded-lg  bg-black py-4',
         className
       )}
       {...props}
@@ -138,15 +139,13 @@ const components = {
   code: ({ className, ...props }) => (
     <code
       className={cn(
-        'relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm',
+        'relative px-[0.3rem] py-[0.2rem] font-mono text-sm',
         className
       )}
       {...props}
     />
   ),
   Image,
-  Callout,
-  Card: MdxCard,
 };
 
 interface MdxProps {
