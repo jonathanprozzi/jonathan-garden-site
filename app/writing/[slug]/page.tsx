@@ -1,15 +1,7 @@
-import { Post } from '@/contentlayer.config';
 import { allPosts } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 export const generateStaticParams = async () =>
-  // console.log(
-  //   'all posts slug',
-  //   allPosts.map((post) => ({
-  //     slug: post._raw.flattenedPath.replace(/writing\/?/, ''),
-  //   }))
-  // );
-
   allPosts.map((post) => ({
     slug: post._raw.flattenedPath.replace(/writing\/?/, ''),
   }));

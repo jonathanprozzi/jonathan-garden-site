@@ -4,8 +4,8 @@ import { allProjects, Project } from 'contentlayer/generated';
 export default function Projects() {
   return (
     <main className="flex flex-col">
-      <div className="flex flex-col  items-center justify-center gap-4">
-        <h1 className="text-bold text-xl md:text-3xl  bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-indigo-500">
+      <div className="flex flex-col gap-4">
+        <h1 className="text-bold text-xl md:text-3xl text-transparent bg-clip-text  bg-gradient-to-r from-teal-300 to-indigo-500 w-fit">
           Projects
         </h1>
         <div className="flex flex-col gap-2">
