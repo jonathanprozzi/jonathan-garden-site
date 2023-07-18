@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { allPosts, Post } from 'contentlayer/generated';
+import { allPosts } from 'contentlayer/generated';
 
 export default function Writing() {
   return (
@@ -51,7 +51,7 @@ export default function Writing() {
             <h2 className="mb-1 text-xl">
               <Link
                 href={post.slug}
-                className="text-blue-700 hover:text-blue-900 dark:text-blue-400"
+                className="transition-all text-slate-200 hover:text-teal-300 flex align-middle"
               >
                 {post.title}
               </Link>

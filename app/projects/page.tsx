@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { allProjects, Project } from 'contentlayer/generated';
+import { allProjects } from 'contentlayer/generated';
 
 export default function Projects() {
   return (
@@ -25,7 +25,7 @@ export default function Projects() {
             <h2 className="mb-1 text-xl">
               <Link
                 href={project.slug}
-                className="text-blue-700 hover:text-blue-900 dark:text-blue-400"
+                className="transition-all text-slate-200 hover:text-teal-300 flex align-middle"
               >
                 {project.title}
               </Link>
