@@ -2,34 +2,27 @@ import { allProjects } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 export const generateStaticParams = async () =>
-  allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
-
-console.log(
-  'all projects',
-  allProjects.map((project) => ({ slug: project._raw.flattenedPath }))
-);
+  allProjects.map((project) => ({
+    slug: project._raw.flattenedPath.replace(/projects\/?/, ''),
+  }));
 
 export const generateMetadata = ({ params }: { params: { slug: string } }) => {
-  console.log('params', params);
-  console.log(
-    'all projects',
-    allProjects.map((project) => ({ slug: project._raw.flattenedPath }))
-  );
   const project = allProjects.find(
-    (project) =>
-      project._raw.flattenedPath.replace(/projects\/?/, '') === params.slug
+    (project) => project.slugAsParams === params.slug
   );
 
-  if (!project) throw new Error(`Project not found for slug ${params.slug}`);
+  if (!project)
+    throw new Error(`Project not found for slug ${params.slug} path 1`);
   return { title: project.title };
 };
 
 const ProjectLayout = ({ params }: { params: { slug: string } }) => {
   const project = allProjects.find(
-    (project) =>
-      project._raw.flattenedPath.replace(/projects\/?/, '') === params.slug
+    (project) => project.slugAsParams === params.slug
   );
-  if (!project) throw new Error(`Project not found for slug ${params.slug}`);
+
+  if (!project)
+    throw new Error(`Project not found for slug ${params.slug}) path 2`);
 
   const MDXContent = useMDXComponent(project.body.code);
 
@@ -44,3 +37,6 @@ const ProjectLayout = ({ params }: { params: { slug: string } }) => {
 };
 
 export default ProjectLayout;
+
+//all projects [ { slug: 'projects/testproject' } ]
+// params slug projects%2Ftestproject
