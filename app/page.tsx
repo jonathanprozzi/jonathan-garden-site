@@ -3,7 +3,7 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <div className="flex flex-col   items-center justify-center  gap-4">
+      <div className="flex flex-col    gap-4">
         <h1 className="text-bold text-xl md:text-3xl  bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-indigo-500 tracking-tighter">
           🌱 Jonathan&apos;s Garden 🌱
         </h1>
@@ -27,7 +27,7 @@ export default function Home() {
             possible.
           </p>
         </div>
-        <ul className="flex flex-row items-center justify-center  gap-4">
+        <ul className="flex flex-row  gap-4">
           <li>
             <a
               href="https://github.com/jonathanprozzi"

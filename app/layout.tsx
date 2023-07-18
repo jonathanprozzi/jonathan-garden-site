@@ -21,7 +21,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          'antialiased max-w-2xl flex flex-col mx-4 mt-8 lg:mx-auto bg-slate-900 text-slate-200'
+          'antialiased max-w-2xl flex flex-col mx-4 my-8 lg:mx-auto bg-slate-900 text-slate-200'
         )}
       >
         <main className="flex-auto min-w-0 flex flex-col px-2 md:px-0">
