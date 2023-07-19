@@ -18,10 +18,6 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find((post) => post.slugAsParams === params.slug);
   if (!post) throw new Error(`Post not found for slug ${params.slug}`);
 
-  if (post.private === true) {
-    notFound();
-  }
-
   const MDXContent = useMDXComponent(post.body.code);
 
   return (
