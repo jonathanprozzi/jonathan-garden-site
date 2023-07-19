@@ -24,7 +24,7 @@ const ProjectCard = ({
     <p className="text-slate-200  text-base">{description}</p>
     <Link
       href={slug}
-      className="transition-all text-slate-200 hover:text-teal-300 text-base flex align-middle"
+      className="transition-all text-teal-300 hover:text-teal-200 text-sm flex align-middle"
     >
       Read More
     </Link>
