@@ -1,6 +1,5 @@
-import { notFound } from 'next/navigation';
+import { Mdx } from '@/components/mdx-components';
 import { allPosts } from 'contentlayer/generated';
-import { useMDXComponent } from 'next-contentlayer/hooks';
 
 export const generateStaticParams = async () =>
   allPosts.map((post) => ({
@@ -18,14 +17,14 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find((post) => post.slugAsParams === params.slug);
   if (!post) throw new Error(`Post not found for slug ${params.slug}`);
 
-  const MDXContent = useMDXComponent(post.body.code);
-
   return (
     <section className="max-auto max-w-xl py-8">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold">{post.title}</h1>
+        <h1 className="mt-2 scroll-m-20 text-4xl font-bold tracking-tight">
+          {post.title}
+        </h1>
       </div>
-      <MDXContent />
+      <Mdx code={post.body.code} />
     </section>
   );
 };
