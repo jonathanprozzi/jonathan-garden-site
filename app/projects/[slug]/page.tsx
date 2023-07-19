@@ -13,7 +13,7 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
 
   if (!project)
     throw new Error(`Project not found for slug ${params.slug} path 1`);
-  return { title: project.title };
+  return { title: project.name };
 };
 
 const ProjectLayout = ({ params }: { params: { slug: string } }) => {
@@ -28,7 +28,7 @@ const ProjectLayout = ({ params }: { params: { slug: string } }) => {
     <section className="max-auto max-w-xl py-8">
       <div className="mb-8 ">
         <h1 className="mt-2 scroll-m-20 text-4xl font-bold tracking-tight">
-          {project.title}
+          {project.name}
         </h1>
       </div>
       <Mdx code={project.body.code} />

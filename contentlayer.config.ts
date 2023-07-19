@@ -3,15 +3,36 @@ import remarkGfm from 'remark-gfm';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { resolve } from 'dns';
 
 export const Project = defineDocumentType(() => ({
   name: 'Project',
   filePathPattern: `projects/**/*.mdx`,
   contentType: 'mdx',
   fields: {
-    title: {
+    name: {
       type: 'string',
       required: true,
+    },
+    dateRange: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      required: true,
+    },
+    organization: {
+      type: 'string',
+      required: false,
+    },
+    responsibilities: {
+      type: 'string',
+      required: false,
+    },
+    stack: {
+      type: 'string',
+      required: false,
     },
   },
   computedFields: {
