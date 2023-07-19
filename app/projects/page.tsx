@@ -32,7 +32,10 @@ const ProjectCard = ({
 );
 
 const sortedProjects = allProjects.sort((a, b) => {
-  a.dateRange > b.dateRange ? -1 : 1;
+  if (new Date(a.dateRange) > new Date(b.dateRange)) {
+    return 1;
+  }
+  return -1;
 });
 
 export default function Projects() {
@@ -40,7 +43,7 @@ export default function Projects() {
     <main className="flex flex-col">
       <div className="flex flex-col gap-4">
         <h1 className="text-bold text-xl md:text-3xl text-transparent bg-clip-text  bg-gradient-to-r from-teal-300 to-indigo-500 w-fit">
-          Projects
+          Featured Projects
         </h1>
         <div className="flex flex-col gap-2">
           <p>
