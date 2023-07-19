@@ -16,11 +16,11 @@ export const Project = defineDocumentType(() => ({
     },
     dateRange: {
       type: 'string',
-      required: true,
+      required: false,
     },
     description: {
       type: 'string',
-      required: true,
+      required: false,
     },
     organization: {
       type: 'string',
