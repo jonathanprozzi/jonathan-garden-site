@@ -1,5 +1,39 @@
 import Link from 'next/link';
-import { allProjects } from 'contentlayer/generated';
+import { allProjects, Project } from 'contentlayer/generated';
+
+const ProjectCard = ({
+  name,
+  dateRange,
+  description,
+  role,
+  slug,
+}: Pick<Project, 'name' | 'dateRange' | 'description' | 'role' | 'slug'>) => (
+  <div className="flex flex-col gap-1 mb-2">
+    <h2 className="text-xl">
+      <Link
+        href={slug}
+        className="transition-all text-slate-200 hover:text-teal-300 flex align-middle"
+      >
+        {name}
+      </Link>
+    </h2>
+    <div className="flex flex-row gap-1 text-slate-300 text-light text-sm">
+      <span>{dateRange}</span>
+      {role ? <span>&bull; {role}</span> : null}
+    </div>
+    <p className="text-slate-200  text-base">{description}</p>
+    <Link
+      href={slug}
+      className="transition-all text-slate-200 hover:text-teal-300 text-base flex align-middle"
+    >
+      Read More
+    </Link>
+  </div>
+);
+
+const sortedProjects = allProjects.sort((a, b) => {
+  a.dateRange > b.dateRange ? -1 : 1;
+});
 
 export default function Projects() {
   return (
@@ -20,15 +54,16 @@ export default function Projects() {
             projects. My goal is to include case studies for featured projects.
           </p>
         </div>
-        {allProjects.map((project, idx) => (
+        {sortedProjects.map((project, idx) => (
           <div key={idx}>
             <h2 className="mb-1 text-xl">
-              <Link
-                href={project.slug}
-                className="transition-all text-slate-200 hover:text-teal-300 flex align-middle"
-              >
-                {project.title}
-              </Link>
+              <ProjectCard
+                name={project.name}
+                dateRange={project.dateRange}
+                role={project.role}
+                description={project.description}
+                slug={project.slug}
+              />
             </h2>
           </div>
         ))}

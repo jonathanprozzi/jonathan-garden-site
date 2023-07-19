@@ -3,7 +3,6 @@ import remarkGfm from 'remark-gfm';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import { resolve } from 'dns';
 
 export const Project = defineDocumentType(() => ({
   name: 'Project',
@@ -16,7 +15,7 @@ export const Project = defineDocumentType(() => ({
     },
     dateRange: {
       type: 'string',
-      required: false,
+      required: true,
     },
     description: {
       type: 'string',
@@ -26,7 +25,7 @@ export const Project = defineDocumentType(() => ({
       type: 'string',
       required: false,
     },
-    responsibilities: {
+    role: {
       type: 'string',
       required: false,
     },
