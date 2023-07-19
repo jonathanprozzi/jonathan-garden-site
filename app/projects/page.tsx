@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { allProjects, Project } from 'contentlayer/generated';
+import { compareDesc, parseISO } from 'date-fns';
 
 const ProjectCard = ({
   name,
@@ -31,12 +32,9 @@ const ProjectCard = ({
   </div>
 );
 
-const sortedProjects = allProjects.sort((a, b) => {
-  if (new Date(a.dateRange) > new Date(b.dateRange)) {
-    return 1;
-  }
-  return -1;
-});
+const sortedProjects = allProjects.sort((a, b) =>
+  compareDesc(parseISO(a.dateForSort), parseISO(b.dateForSort))
+);
 
 export default function Projects() {
   return (
@@ -57,6 +55,7 @@ export default function Projects() {
             projects. My goal is to include case studies for featured projects.
           </p>
         </div>
+
         {sortedProjects.map((project, idx) => (
           <div key={idx}>
             <h2 className="mb-1 text-xl">

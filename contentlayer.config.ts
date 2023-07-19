@@ -44,6 +44,10 @@ export const Project = defineDocumentType(() => ({
       resolve: (project) =>
         project._raw.flattenedPath.split('/').slice(1).join('/'),
     },
+    dateForSort: {
+      type: 'date',
+      resolve: (project) => new Date(project.dateRange.split('-')[0]),
+    },
   },
 }));
 
