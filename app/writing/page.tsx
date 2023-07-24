@@ -46,7 +46,7 @@ export default function Writing() {
             </a>
           </p>
         </div>
-        {allPosts.map((post, idx) => (
+        {/* {allPosts.map((post, idx) => (
           <div key={idx}>
             <h2 className="mb-1 text-xl">
               <Link
@@ -57,7 +57,7 @@ export default function Writing() {
               </Link>
             </h2>
           </div>
-        ))}
+        ))} */}
       </div>
     </main>
   );
